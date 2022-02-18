@@ -1,16 +1,16 @@
 Hello! This readme constitutes some level of documentation for Rational.java
-since I don't know javadoc yet. Ok the idea behind Rational is to be able to
-avoid truncation issues with floats/doubles. How much utility does this serve?
-Not much, but I thought it would be a cool project to do. A few notes:
--Rationals should work just fine with negatives, though I have not tested this
-extensively.
--Rationals do not reduce automatically. You'll need to do this manually if you
-wish to do so by calling the appropriate reduce() method.
+since I don't know javadoc yet. The idea behind Rational is to be able to avoid
+truncation issues with floats/doubles. This allows for greater precision. Formal
+definition, from Wikipedia: a rational number is a number that can be expressed
+as the quotient or fraction (p/q) of two integers, a numerator p and a non-zero
+denominator q.
+A few notes:
+-Rational does not reduce automatically. This needs to be done manually by
+calling the appropriate reduce() method.
 -The mathematical mutator methods of Rational are overloaded with two methods
-each, one static and one non-static. This may be bad practice, but if it is I
-don't yet see a reason why.
+each, one static and one non-static.
 
-Ok, let's just get right into it. Remember: num = numerator, den = denominator
+Remember: num = numerator, den = denominator
 
 CONSTRUCTORS
 public Rational(int num, int den)
