@@ -459,7 +459,8 @@ public class Fortune{
         return "The sure way to predict the future is to invent it.";
       case 224:
         return "The truly generous share, even with the undeserving.";
+      default:
+        return "No fortune. Apple or something like that.";
     }
-    return "No fortune. Apple or something like that.";
   }
 }
