@@ -129,13 +129,10 @@ public class Game {
 
     // diagonals, needs to be rethought when going above 3 as board size!!
     boolean dgnlVictory = false;
-    if ((!rowVictory && !colVictory) && (cellCoords[0] + cellCoords[1]) % 2 == 0) {
+    if ((cellCoords[0] + cellCoords[1]) % 2 == 0) {
       dgnlVictory = checkDiagonals(cellCoords, matchMe);
     }
-    if (dgnlVictory)
-      return true;
-
-    return false;
+    return dgnlVictory;
   }
 
   // will break when going above 3 as board size! Rethink how it's implemented.
@@ -143,32 +140,40 @@ public class Game {
    * Internal method to check whether a specifc Player move wins the board by
    * diagonals
    * 
-   * @param cellCoords the coordinates of the move - row, column.
+   * @param cellCoords the coordinates of the move - {row, column}.
    * @param matchMe    the Player's sign, i.e. 'X' or 'O'
    * @return true if the move wins the board on a diagonal
    */
   private boolean checkDiagonals(int[] cellCoords, Character matchMe) {
     // the "\" backslash diagonal
-    boolean backVictory = true;
-    if (cellCoords[0] == cellCoords[1])
+    if (cellCoords[0] == cellCoords[1]){
+
+      boolean backVictory = true;
+
       for (int i = 0; i < 3; i++) {
         Character current = board.getCell(i, i).val();
         if (current == null || !current.equals(matchMe))
           backVictory = false;
       }
-    if (backVictory)
+      
+      if (backVictory)
       return true;
+    }
 
     // the "/" forwardslash diagonal
-    boolean fwdVictory = true;
-    if (cellCoords[0] + cellCoords[1] == 2)
+    if (cellCoords[0] + cellCoords[1] == 2){
+
+      boolean fwdVictory = true;
+
       for (int i = 0; i < 3; i++) {
         Character current = board.getCell(i, 2 - i).val();
         if (current == null || !current.equals(matchMe))
           fwdVictory = false;
       }
-    if (fwdVictory)
-      return true;
+      
+      if (fwdVictory)
+        return true;
+    }
 
     return false;
   }
