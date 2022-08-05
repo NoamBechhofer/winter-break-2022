@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "Tic Tac Toe/src",
-        "tictactoe/src"
-    ]
+        "Tic Tac Toe\\sources"
+    ],
+    "java.project.outputPath": "Tic Tac Toe\\classes"
 }
