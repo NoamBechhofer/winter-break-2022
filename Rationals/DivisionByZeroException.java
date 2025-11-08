@@ -1,1 +1,2 @@
-public class DivisionByZeroException extends Exception{}
+public class DivisionByZeroException extends Exception {
+}

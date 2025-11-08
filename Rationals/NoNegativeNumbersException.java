@@ -1,1 +1,2 @@
-public class NoNegativeNumbersException extends Exception{}
+public class NoNegativeNumbersException extends Exception {
+}
